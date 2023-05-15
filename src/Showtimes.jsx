@@ -73,7 +73,7 @@ function Showtimes(props) {
                             className="button is-rounded is-outlined"
                             disabled={hasTimeCompleted(s)}
                         >{s}</button>
-                    )) : <span>No screenings available today.</span>
+                    )) : <span className='pb-5'>No screenings available today.</span>
                 }
             </div>
         </>
