@@ -3,6 +3,8 @@ import 'bulma/css/bulma.min.css';
 import Showtimes from './Showtimes';
 import Rating from './Rating';
 
+// This componenet displays the list of movies with their poster, 
+// title and rating, and allows filtering by rating and text search.
 function Movies() {
     const [movies, setMovies] = useState([]);
     const [theaters, setTheaters] = useState([]);

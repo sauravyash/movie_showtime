@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
+// This function takes a string in the format "hh:mm am/pm" 
+// and converts it to a Date object set to today's date. 
+// Note that the timezone is assumed to be local.
 function textToTime(t) {
     const [time, am] = t.split(" ")
     let [h, m] = time.split(":")
@@ -9,6 +12,10 @@ function textToTime(t) {
     return new Date(now.getFullYear(), now.getMonth(), now.getDate(), parseInt(h), parseInt(m))
 }
 
+// Checks whether the given Date object `t` represents a 
+// time that has already passed, relative to the current moment.
+// Returns true if `t` is in the past, 
+// false if it's in the future or equal to the current time.
 function hasTimeCompleted(t) {
     if (!t) return false
 
@@ -17,6 +24,9 @@ function hasTimeCompleted(t) {
 
     return given.getTime() < now.getTime()
 }
+
+// Displays a list of showtimes for the given movies, 
+// spilt into tabs based on the Cinema.
 function Showtimes(props) {
     const [screenings, setScreenings] = useState({})
     const [timings, setTimings] = useState([])

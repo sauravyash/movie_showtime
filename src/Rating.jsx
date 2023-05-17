@@ -1,5 +1,7 @@
 import React from "react";
 
+// A simple component that displays a tag with the given color for 
+// each rating. Expandable for more ratings.
 function Rating(props) {
     let color = "is-primary"
     switch (props.rating) {
